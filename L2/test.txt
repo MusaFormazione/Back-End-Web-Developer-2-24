@@ -1,0 +1,2 @@
+In php sono concessi
+gli spazi nelle stringhe
