@@ -1,8 +1,3 @@
-<?php $valoreEsportato = require_once __DIR__ . '/function.php';
-
-echo $valoreEsportato;
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
