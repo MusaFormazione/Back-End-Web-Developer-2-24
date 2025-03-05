@@ -1,8 +1,3 @@
-<?php
-require_once 'ListSystem.php';
-
-$ls = new ListSystem('Lista della spesa');
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,11 +11,16 @@ $ls = new ListSystem('Lista della spesa');
 <div class="container">
 
     
-    <?php
+    <h1>Lista della spesa</h1>
     
-    $ls->renderForm()
+    <form method="POST">
+        
+        <input type="text" name="todo" class="form-control mb-3" placeholder="Scrivi qualcosa">
+        
+        <button class="btn btn-primary">Salva</button>
+        
+    </form>
     
-    ?>    
     
     
     <?php
@@ -61,6 +61,28 @@ if(count($todos) === 0){
 
 </div>
 
+<?php
+
+if($_SERVER['REQUEST_METHOD'] === 'POST'){
+    
+    $newTodo = $_POST['todo'] ?? '';
+    
+    if(!empty($newTodo)){
+        
+        
+        if(!is_dir($folder)){
+            mkdir($folder);
+        }
+
+        $todos[] = $newTodo;
+        
+        file_put_contents($file,json_encode($todos));
+        
+    }
+    
+
+    }
+?>
 
 
 </body>

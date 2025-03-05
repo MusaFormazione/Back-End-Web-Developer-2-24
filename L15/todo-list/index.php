@@ -24,6 +24,10 @@ $ls2 = new ListSystem('Lista delle cose da fare');
         <div class="col pt-5">
             <?php $ls->renderList() ?>
         </div>
+
+        <div class="col-12">
+            <?php $ls->renderDeleteForm() ?>
+        </div>
     
     </div>
 </div>
