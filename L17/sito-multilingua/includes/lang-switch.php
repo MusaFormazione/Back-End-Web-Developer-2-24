@@ -1,6 +1,12 @@
 <?php
+session_start();
 
-$lang = $_GET['lang'] ?? 'it';
+if(isset($_GET['lang'])){
+    $lang = $_GET['lang'];   
+    $_SESSION['lang'] = $lang;
+}else{
+    $lang = $_SESSION['lang'] ?? 'it';
+}
 
 include "lang/$lang.php";
 

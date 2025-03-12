@@ -4,7 +4,7 @@ require_once './includes/header.php';?>
 
 <main>
 
-    <h1><?=$strings['home-page']['title']?></h1>
+    <h1><?=STRINGS['home-page']['title']?></h1>
 
 </main>
 

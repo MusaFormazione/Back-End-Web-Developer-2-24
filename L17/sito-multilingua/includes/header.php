@@ -21,7 +21,7 @@
                         <select name="lang" class="form-control">
                             <?=createLangFields() ?>
                         </select>
-                        <button class="btn btn-info"><?=$strings['buttons']['lang-switch']?></button>
+                        <button class="btn btn-info"><?=STRINGS['buttons']['lang-switch']?></button>
                     </form>
                 </div>
             </div>

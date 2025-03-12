@@ -1,5 +1,5 @@
 <?php
-$strings = [
+define('STRINGS', [
     "main-nav" => [
         "home" => "Home",
         "about" => "About Us",
@@ -17,4 +17,4 @@ $strings = [
     "contacts" => [
         "title" => "Contact us"
     ]
-];
+]);

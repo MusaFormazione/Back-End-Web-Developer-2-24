@@ -1,11 +1,13 @@
-<?php require_once './includes/header.php';?>
+<?php 
+$title = '';
+require_once './includes/header.php';?>
 
 <main>
     <div class="container">
 
         
         <section>
-            <h1><?=$strings['contacts']['title']?></h1>
+            <h1><?=STRINGS['contacts']['title']?></h1>
             
             <form>
                 
