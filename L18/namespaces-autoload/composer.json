@@ -1,0 +1,15 @@
+{
+    "name": "drawi/namespaces-autoload",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "captain-mike",
+            "email": "info@grafikweb.it"
+        }
+    ],
+    "require": {}
+}
