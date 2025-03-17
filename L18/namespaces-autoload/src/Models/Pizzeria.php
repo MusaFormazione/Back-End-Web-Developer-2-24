@@ -20,7 +20,7 @@ class Pizzeria{
 
         echo "<ul>";
         foreach($this->pizze as $pizza):    
-            echo "<li>$pizza->gusto</li>";
+            echo "<li>Gusto: $pizza->gusto - Prezzo: {$pizza->getPrezzo()}</li>";
         endforeach;
         echo "</ul>";
     }

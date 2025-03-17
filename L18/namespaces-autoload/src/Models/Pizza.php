@@ -12,7 +12,7 @@ class Pizza{
     }
 
     public function getPrezzo() {
-        return $this->prezzo;
+        return $this->prezzo . '€';
     }
 
 }
