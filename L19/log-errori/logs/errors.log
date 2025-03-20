@@ -1,0 +1,10 @@
+[19-Mar-2025 18:53:01 UTC] PHP Warning:  Undefined variable $nonEsiste in C:\laragon\www\musa2-24\L19\log-errori\index.php on line 6
+[19-Mar-2025 18:59:41 UTC] PHP Warning:  Undefined variable $nonEsiste in C:\laragon\www\musa2-24\L19\log-errori\index.php on line 6
+[19-Mar-2025 18:59:43 UTC] PHP Warning:  Undefined variable $nonEsiste in C:\laragon\www\musa2-24\L19\log-errori\index.php on line 6
+[19-Mar-2025 19:00:22 UTC] PHP Warning:  Undefined variable $nonEsiste in C:\laragon\www\musa2-24\L19\log-errori\index.php on line 6
+[19-Mar-2025 19:00:24 UTC] PHP Warning:  Undefined variable $nonEsiste in C:\laragon\www\musa2-24\L19\log-errori\index.php on line 6
+[19-Mar-2025 19:01:48 UTC] PHP Warning:  Undefined variable $nonEsiste in C:\laragon\www\musa2-24\L19\log-errori\index.php on line 6
+[19-Mar-2025 19:01:49 UTC] PHP Warning:  Undefined variable $nonEsiste in C:\laragon\www\musa2-24\L19\log-errori\index.php on line 6
+[19-Mar-2025 19:02:31 UTC] PHP Warning:  Undefined variable $nonEsiste in C:\laragon\www\musa2-24\L19\log-errori\index.php on line 6
+[19-Mar-2025 19:02:31 UTC] PHP Stack trace:
+[19-Mar-2025 19:02:31 UTC] PHP   1. {main}() C:\laragon\www\musa2-24\L19\log-errori\index.php:0
