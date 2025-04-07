@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . '/config.php';
+require_once __DIR__ . '/../config.php';
 
 //todo: aggiungi un messaggio
 function redirectToHome(string $message = "", bool $error = false): void{
@@ -8,10 +8,14 @@ function redirectToHome(string $message = "", bool $error = false): void{
 }
 
 function redirectTo(string $location, string $message = "", bool $error = false){
-    $messageParam = $message ? "?message=$message" :  "";
+    $messageParam = $message ? "?message=".urlencode($message) :  "";
     $errorParam = $error ? "&error=1" :  "";
     header("Location: " . BASE_URL . "{$location}{$messageParam}{$errorParam}");
     die;
+}
+
+function checkPostRequest(): void{
+    if($_SERVER['REQUEST_METHOD'] != 'POST') redirectToHome("Pagina non accessibile",true);
 }
 
 
