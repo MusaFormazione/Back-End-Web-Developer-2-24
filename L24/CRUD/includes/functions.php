@@ -56,3 +56,5 @@ function getCheckedData(string ...$names):array{
 
     return $checkedData;
 }
+
+
