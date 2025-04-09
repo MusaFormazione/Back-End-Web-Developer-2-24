@@ -1,6 +1,6 @@
 <?php 
 include "./includes/header.php"; 
-require "./includes/CRUD-files/read-by-id.php"; 
+require "./CRUD-files/read-by-id.php"; 
 
 
 [
@@ -14,7 +14,7 @@ require "./includes/CRUD-files/read-by-id.php";
 <div class="container">
     <h1>Modifica la pizza</h1>
 
-    <form action="includes/CRUD-files/update.php?id=<?=$id?>" method="POST">
+    <form action="CRUD-files/update.php?id=<?=$id?>" method="POST">
 
         <label for="gusto">Gusto</label>
         <input type="text" value="<?=$gusto?>" name="gusto" id="gusto" class="form-control">

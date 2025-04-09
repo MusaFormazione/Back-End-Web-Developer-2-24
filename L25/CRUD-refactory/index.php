@@ -1,5 +1,5 @@
 <?php include("./includes/header.php") ?>
-<?php include("./includes/CRUD-files/read.php") ?>
+<?php include("./CRUD-files/read.php") ?>
 
 <div class="container">
     <h1>Lista pizze</h1>
