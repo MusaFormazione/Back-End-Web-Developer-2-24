@@ -1,14 +1,6 @@
 <?php
-require_once "config.php";
-require BASE_PATH . "/includes/connection.php";
+require_once __DIR__ . "/../utils/QueryHandler.php";
 
-$sql = "SELECT * FROM pizze ORDER BY gusto ASC";
+$qh = new QueryHandler();
 
-$query = $db->query($sql);
-
-if(!$query) {
-    //gestisci errore con un messaggio
-    die();
-}
-
-$pizze = $query->fetchAll(PDO::FETCH_ASSOC);
+$qh->getAll('pizze','gusto');

@@ -1,5 +1,8 @@
 <?php include("./includes/header.php") ?>
-<?php include("./CRUD-files/read.php") ?>
+<?php require_once __DIR__ . "/../utils/QueryHandler.php";
+
+$qh = new QueryHandler();
+$pizze = $qh->getAll('pizze','gusto'); ?>
 
 <div class="container">
     <h1>Lista pizze</h1>
