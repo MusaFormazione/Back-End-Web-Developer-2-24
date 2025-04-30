@@ -1,5 +1,7 @@
 <?php
+session_start();
 require_once __DIR__ . '/../config.php';
+define('IS_LOGGED_IN', isset($_SESSION['user']));
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,6 +22,11 @@ require_once __DIR__ . '/../config.php';
             <?php include __DIR__ . '/nav.php' ?>
         </ul>
 
+        <div class="col-md-4 text-end">
+            <?php if(IS_LOGGED_IN){
+                echo "Benvenuto/a ". $_SESSION['user']['nome'];
+            } ?>
+        </div>
         <div class="col-md-3 text-end">
             <?php include __DIR__ . '/auth-nav.php' ?>
         </div>

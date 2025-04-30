@@ -1,5 +1,6 @@
 <?php
 include './parts/header.php';
+include BASE_PATH. '/auth/guards/guest-guard.php';
 ?>
 
 <div class="container">
@@ -7,8 +8,7 @@ include './parts/header.php';
         <div class="col-12">
             <h1>Registrati</h1>
 
-            <div class="alert alert-success"></div>
-            <div class="alert alert-warning"></div>
+            <?php include './parts/show-messages.php' ?>
 
             <form action="<?=BASE_URL?>/auth/main/register-new-user.php" method="POST">
                 <input type="text" name="nome" placeholder="Nome" class="form-control mb-3">

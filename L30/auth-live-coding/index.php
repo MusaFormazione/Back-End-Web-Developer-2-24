@@ -1,11 +1,10 @@
 <?php
-session_start();
 include './parts/header.php';
-
-echo "Benvenuto/a " . $_SESSION['user']['nome'];
+include BASE_PATH. '/auth/guards/guest-guard.php';
 ?>
 
 <div class="container">
+<?php include './parts/show-messages.php' ?>
     <div class="row">
 
         <div class="col-12">

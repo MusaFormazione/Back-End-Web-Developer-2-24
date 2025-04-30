@@ -1,5 +1,6 @@
 <?php
 include './parts/header.php';
+include BASE_PATH. '/auth/guards/guest-guard.php';
 ?>
 
 <div class="container">
@@ -7,13 +8,12 @@ include './parts/header.php';
         <div class="col-12">
             <h1>Accedi</h1>
 
-            <div class="alert alert-success"></div>
-            <div class="alert alert-warning"></div>
+            <?php include './parts/show-messages.php' ?>
 
             <form action="<?=BASE_URL?>/auth/main/user-login.php" method="POST">
-                <input type="email" name="email" placeholder="La tua E-mail" class="form-control mb-3">
+                <input value="info@prova.it" type="email" name="email" placeholder="La tua E-mail" class="form-control mb-3">
 
-                <input type="password" name="password" placeholder="La tua password" class="form-control mb-3">
+                <input value="password" type="password" name="password" placeholder="La tua password" class="form-control mb-3">
 
                 <button class="btn btn-primary">Login</button>
             </form>
