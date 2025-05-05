@@ -2,7 +2,7 @@
 include '../parts/header.php';
 include BASE_PATH. '/auth/guards/auth-guard.php';
 ?>
-<?php include './parts/show-messages.php' ?>
+<?php include '../parts/show-messages.php' ?>
 <div class="container">
     <div class="row">
 
