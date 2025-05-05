@@ -30,14 +30,18 @@ class Auth extends Connection{
      * Summary of validateFields
      * @param array $fields Lista di chiavi attese
      * @param array $data Dati da validare (es. $_POST)
-     * @return void
+     * @param array $redirectUrl Url per reindirizzare l'utente in caso di errori
+     * @return array Dati sanitizzati
      */
     private function validateFields(array $fields, array $data, string $redirectUrl): array{
         $sanitized = [];
 
         foreach($fields as $field){
-            if(empty($data[$field])){
+            if(isset($data[$field])){
                 ErrorHelper::setSessionError('Compila i campi obbligatori',  BASE_URL. $redirectUrl);
+                if(empty($data[$field])){
+                    ErrorHelper::setSessionError('Compila i campi obbligatori',  BASE_URL. $redirectUrl);
+                }
             }
             $sanitized[$field] = trim(strip_tags($data[$field]));
         }

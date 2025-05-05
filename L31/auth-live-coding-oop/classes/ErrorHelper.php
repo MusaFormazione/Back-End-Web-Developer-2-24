@@ -2,10 +2,11 @@
 
 class ErrorHelper{
 
-    public static function setSessionError($message, $redirectUrl): never{
+    public static function setSessionError($message, $redirectUrl = null): never{
         $_SESSION['error'] = true;
         $_SESSION['message'] = 'Utente già esistente';
-        header("Location: ". $redirectUrl);
+        
+        if($redirectUrl) header("Location: ". $redirectUrl);
         die;
     }
 

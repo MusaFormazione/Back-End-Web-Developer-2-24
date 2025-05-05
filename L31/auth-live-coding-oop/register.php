@@ -12,17 +12,8 @@ $auth->requireGuest();
 
                 //Verifico se il metodo usato è quello corretto 
                 if($_SERVER['REQUEST_METHOD'] !== 'POST'){
-                    $_SESSION['error'] = true;
-                    $_SESSION['message'] = 'Errore nella richiesta';
-                    header("Location: ". BASE_URL. "/register.php");
-                    die;
+                    ErrorHelper::setSessionError('Richiesta non valida');
                 }
-
-                //Imposto una stringa vuota per tutti i dati mancanti. 
-                $nome = $_POST['nome'] ?? "";
-                $cognome = $_POST['cognome'] ?? "";
-                $email = $_POST['email'] ?? "";
-                $password = $_POST['password'] ?? "";
 
                 $auth->register($POST);
 
