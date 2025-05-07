@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '../classes/Auth.php';
+require_once __DIR__ . '/../classes/Auth.php';
 $auth = new Auth('/login','/register', '/rotte-protette/dashboard.php');
 ?>
 <!DOCTYPE html>

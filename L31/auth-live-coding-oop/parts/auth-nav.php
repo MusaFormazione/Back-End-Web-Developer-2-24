@@ -5,5 +5,11 @@
 
 
 <?php if ($auth->isLoggedIn()): ?>
-    <a href="<?= BASE_URL ?>/auth/main/user-logout.php" class="btn btn-danger">Logout</a>
+    <a href="?action=logout" class="btn btn-danger">Logout</a>
 <?php endif; ?>
+
+<?php
+if($isset($_GET['action']) && $_GET['action'] == 'logout'){
+    $auth->logout();
+}
+?>

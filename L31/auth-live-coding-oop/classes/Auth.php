@@ -1,7 +1,7 @@
 <?php
-require_once __DIR__. '../config.php';
-include __DIR__ . './Connection.php';
-include __DIR__. './ErrorHelper.php';
+require_once __DIR__. '/../config.php';
+include __DIR__ . '/Connection.php';
+include __DIR__. '/ErrorHelper.php';
 
 class Auth extends Connection{
 
@@ -154,7 +154,7 @@ class Auth extends Connection{
         return $this->user;
     }
 
-    public function getUserId(): void{
+    public function getUserId():int|null{
         return $this->user['id'] ?? null;
     }
 
@@ -162,13 +162,15 @@ class Auth extends Connection{
         echo $this->user[$field] ?? null;
     }
 
-    public function requireLogin(string $redirectUrl = $this->dashBoardRoute){
+    public function requireLogin(string $redirectUrl = ''){
+        $redirectUrl = $redirectUrl ?? $this->dashBoardRoute;
         if(!$this->isLoggedIn()){
             ErrorHelper::setSessionError('Devi effettuare il login per accedere a questa pagina', BASE_URL. $redirectUrl);
         }
     }
 
-    public function requireGuest(string $redirectUrl = $this->dashBoardRoute){
+    public function requireGuest(string $redirectUr = ''){
+        $redirectUrl = $redirectUrl ?? $this->dashBoardRoute;
         if(!$this->isLoggedIn()){
             ErrorHelper::setSessionError('Non puoi accedere a questa pagina se sei loggato', BASE_URL. $redirectUrl);
         }
