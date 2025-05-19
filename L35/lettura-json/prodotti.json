@@ -1,0 +1,47 @@
+[
+  {
+    "ProductID": 1,
+    "ProductName": "Product 1",
+    "Category": "Sports",
+    "Price": 59.4,
+    "Stock": 38,
+    "Description": "This is a description for Product 1.",
+    "SKU": "SKU-00001"
+  },
+  {
+    "ProductID": 2,
+    "ProductName": "Product 2",
+    "Category": "Sports",
+    "Price": 50.62,
+    "Stock": 492,
+    "Description": "This is a description for Product 2.",
+    "SKU": "SKU-00002"
+  },
+  {
+    "ProductID": 3,
+    "ProductName": "Product 3",
+    "Category": "Books",
+    "Price": 61.57,
+    "Stock": 267,
+    "Description": "This is a description for Product 3.",
+    "SKU": "SKU-00003"
+  },
+  {
+    "ProductID": 4,
+    "ProductName": "Product 4",
+    "Category": "Electronics",
+    "Price": 60.91,
+    "Stock": 223,
+    "Description": "This is a description for Product 4.",
+    "SKU": "SKU-00004"
+  },
+  {
+    "ProductID": 5,
+    "ProductName": "Product 5",
+    "Category": "Home",
+    "Price": 25.3,
+    "Stock": 311,
+    "Description": "This is a description for Product 5.",
+    "SKU": "SKU-00005"
+  }
+]
