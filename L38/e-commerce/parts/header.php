@@ -1,5 +1,6 @@
 <?php
 
+include __DIR__ . '/../functions.php';
 include __DIR__ . '/../classes/Auth.php';
 
 $auth = new Auth('/login.php', '/register.php', '/user-account/orders.php');

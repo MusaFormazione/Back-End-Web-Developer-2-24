@@ -5,10 +5,10 @@ class Pagination extends Connection{
     protected $limite;
     protected $righePaginazione;
     protected $pagina;
-    protected $articoli;
+    protected $prodotti;
 
     public function __construct(int $limite = 10){
-        parent::__construct("eseercizio_paginazione_2_24", "Michele", "password");
+        parent::__construct("ecommerce-2-24", "Michele", "password");
 
         $this->limite = $limite;
         $this->checkPagina();
@@ -29,7 +29,7 @@ class Pagination extends Connection{
 
     private function getPageCount(): void
     {
-        $sql = "SELECT count(*) FROM articoli";
+        $sql = "SELECT count(*) FROM prodotti";
         $query = $this->getConnection()->query($sql);
 
         if (!$query)
@@ -45,21 +45,22 @@ class Pagination extends Connection{
 
 
         //Query dei contenuti con limit e offset per ottenere i contenuti della pagina scelta
-        $sql = "SELECT * FROM articoli ORDER BY id ASC LIMIT $this->limite OFFSET $offset";
+        $sql = "SELECT * FROM prodotti ORDER BY id ASC LIMIT $this->limite OFFSET $offset";
         $query = $this->getConnection()->query($sql);
 
         if (!$query)
-            die('Errore nel recuperare gli articoli');
+            die('Errore nel recuperare gli prodotti');
 
-        $this->articoli = $query->fetchAll();
+        $this->prodotti = $query->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function renderPaginatedContent(string $cardTemplate, string $boxClasses = "col-12 col-md-6 col-lg-3"): void
     {
-        foreach ($this->articoli as $articolo):
+        foreach ($this->prodotti as $articolo):
             [
-                'titolo' => $titolo,
-                'contenuto' => $contenuto
+                'id' => $id,
+                'nome' => $nome,
+                'prezzo' => $prezzo
             ] = $articolo;
             ?>
 
