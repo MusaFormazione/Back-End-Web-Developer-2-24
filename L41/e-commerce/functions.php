@@ -105,7 +105,7 @@ function getCartItemsIds(): array{
     }, $_SESSION['cart']);
 }
 
-function insertOrder(){
+function insertOrder():bool{
     //In un database relazionale, siccome Ordini e prodotti sono entità a sé stanti Sarà necessario eseguire più query Consecutive per poter effettuare un ordine completo 
     //La logica che vedrai all'interno di questa funzione, quindi, sarà la seguente:
     //Inseriamo Un solo ordine e poi un ORDINI_PRODOTTI per ogni prodotto nel carrello
@@ -153,9 +153,11 @@ function insertOrder(){
         $db->commit();
 
         $_SESSION['cart'] = [];
+        return true;
     }catch(PDOException $e){
         $db->rollBack();
         echo $e->getMessage();
+        return false;
     }
 
 
