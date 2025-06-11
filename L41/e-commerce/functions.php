@@ -125,8 +125,13 @@ function insertOrder(){
         $userId = $auth->getUserId();
         $date = date("Y-m-d H:i:s");
         
-        $sql = "INSERT INTO ordini SET (userId, data) VALUES ($userId, $date)";
-        $db->query($sql);
+        $sql = "INSERT INTO ordini (userId, data) VALUES (:userId, :data)";
+        $query = $db->prepare($sql);
+
+        $query->bindParam(':userId', $userId, PDO::PARAM_INT);
+        $query->bindParam(':data', $date, PDO::PARAM_STR);
+
+        $query->execute();
         
         $orderId = $db->lastInsertId();
         
@@ -141,16 +146,29 @@ function insertOrder(){
                 'qty' => $qty,
             ] = $product;
                 
-            $sql = "INSERT INTO ordini_prodotti SET (order_id, prodotto_id, quantita) VALUES ($orderId, $productId, $qty)";
-            $q = $db->query($sql);
-            var_dump($q);
+            $sql = "INSERT INTO ordini_prodotti (order_id, prodotto_id, quantita) VALUES ($orderId, $productId, $qty)";
+            $db->query($sql);
         }
          
         $db->commit();
+
+        $_SESSION['cart'] = [];
     }catch(PDOException $e){
         $db->rollBack();
         echo $e->getMessage();
     }
 
 
+}
+
+function isCartEmpty(): bool{
+    return count($_SESSION['cart']) === 0;
+}
+
+function getCartTotal(array $cartProducts):int|float{
+    if(isCartEmpty()) return 0;
+
+    return array_reduce($cartProducts, function($cartTotal, $product){
+        return $cartTotal + ($product['prezzo'] * $product['qty']);
+    }, 0);
 }
