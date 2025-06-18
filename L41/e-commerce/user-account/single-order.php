@@ -50,6 +50,8 @@ $results = $query?->fetchAll(PDO::FETCH_ASSOC);
     </tr>
 
     <?php 
+
+    $total = 0;
     
 
     foreach($results as $p):
@@ -61,20 +63,21 @@ $results = $query?->fetchAll(PDO::FETCH_ASSOC);
             'quantita' =>  $qty,
         ] = $p;
 
+        $total += $prezzo * $qty;
+
         ?>    
         <tr>
             <td><?=$id?></td>
             <td><?=$nome?></td>
-            <td><?=$prezzo?></td>
+            <td><?=$prezzo?>€</td>
             <td><?=$qty?></td>
         </tr>
     <?php endforeach;?>
 
     <tfoot>
         <tr>
-            <td colspan="2"><b>Totale</b></td>
-            <td>
-            </td>
+            <td colspan="3"><b>Totale</b></td>
+            <td><?=$total?>€</td>
         </tr>
     </tfoot>
 </table>
