@@ -1,0 +1,2 @@
+#Comando che genera un controller resourceful e il relativo model
+php artisan make:controller PizzaController --model=Pizza --resource
