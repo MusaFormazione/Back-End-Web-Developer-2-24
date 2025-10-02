@@ -21,17 +21,6 @@ export const ProductsProvider = ({ children }) => {
   const [error, setError] = useState(null);
 
 
-  const [cart, setCart] = useState([]);
-
-  const addToCart = product => {
-    setCart(prev => [...prev, product])
-  }
-
-  const removeFromCart = id => {
-    setCart(prev => prev.filter(p => p.id != id));
-  }
-
-
 
   const getProducts = async () => {
     setLoading(true);
@@ -123,10 +112,7 @@ export const ProductsProvider = ({ children }) => {
     addProduct,
     updateProduct,
     deleteProduct,
-    getProductById,
-    cart,
-    addToCart,
-    removeFromCart
+    getProductById
   };
 
   return (

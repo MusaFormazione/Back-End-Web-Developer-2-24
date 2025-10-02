@@ -15,7 +15,7 @@ import OrdineCompletato from '../pages/customer/OrdineCompletato';
 import { useAuth } from '../../contexts/AuthContext';
 import { useProducts } from '../../contexts/ProductsContext';
 import Logout from "./Logout";
-import HeaderCart from "../pages/customer/HeaderCart";
+import HeaderCart from "./HeaderCart";
 
 const Header = () => {
 

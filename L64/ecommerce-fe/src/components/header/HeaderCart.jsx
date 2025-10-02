@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { useProducts } from "../../../contexts/ProductsContext"
+import { useOrder } from "../../contexts/OrderContext"
 
 const HeaderCart = () => {
 
     const {
         cart,
         removeFromCart
-    } = useProducts();
+    } = useOrder();
 
     const [isOpen, setIsOpen] = useState(false);
 
@@ -19,14 +19,13 @@ const HeaderCart = () => {
         <button onClick={() => toggleDropdown()} className={`btn btn-secondary dropdown-toggle ${isOpen ? 'show' : ''}`} type="button" data-bs-toggle="dropdown" aria-expanded="false">
             Cart
         </button>
-        <ul className={`dropdown-menu ${isOpen && cart-length > 0 ? 'show' : ''}`}>
+        <ul className={`dropdown-menu ${isOpen && cart.length > 0 ? 'show' : ''}`}>
             {cart.map(p => 
-                <li>
-                    <span 
-                        key={`cart-item-${p.id}`} className="dropdown-item"
-                        >
+                <li key={`cart-item-${crypto.randomUUID()}`}>
+                    <span className="dropdown-item">
                             {p.name}
-                            <small onClick={ () => removeFromCart(p.id)}>
+                            x{p.quantity}
+                            <small className="btn btn-danger ms-2" onClick={ () => removeFromCart(p.id)}>
                                 Rimuovi
                             </small>
                     </span>

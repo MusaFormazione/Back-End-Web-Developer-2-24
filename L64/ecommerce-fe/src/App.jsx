@@ -3,6 +3,7 @@ import './App.css';
 import Header from './components/header/Header';
 import { ProductsProvider } from './contexts/ProductsContext';
 import { AuthProvider } from './contexts/AuthContext';
+import { OrderProvider } from './contexts/OrderContext';
 
 function AppContent() {
 
@@ -18,7 +19,9 @@ function App() {
   return (
     <AuthProvider>
       <ProductsProvider>
+        <OrderProvider>
           <AppContent />
+        </OrderProvider>
       </ProductsProvider>
     </AuthProvider>
   )
